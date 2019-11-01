@@ -50,10 +50,10 @@ public class UsersController {
 	@GetMapping("/users/{email}/{password}")
 	public ResponseEntity<Users> getUserByEmailAndPassword(@PathVariable(value = "email") String email, @PathVariable(value = "password") String password)
 			throws ResourceNotFoundException {
-		System.out.print("password" + password);
-		System.out.print("email" + email);
+//		System.out.print("password" + password);
+//		System.out.print("email" + email);
 		Users users = usersRepository.findByEmailAndPassword(email, password);
-		System.out.print("dsasdasdasdasdasd" + users);
+//		System.out.print("dsasdasdasdasdasd" + users);
 		return ResponseEntity.ok().body(users);
 	}
 
