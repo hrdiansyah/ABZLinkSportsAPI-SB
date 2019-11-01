@@ -47,10 +47,13 @@ public class UsersController {
 	
 	//TEST
 	@CrossOrigin
-	@GetMapping("/login/{email}/{password}")
+	@GetMapping("/users/{email}/{password}")
 	public ResponseEntity<Users> getUserByEmailAndPassword(@PathVariable(value = "email") String email, @PathVariable(value = "password") String password)
 			throws ResourceNotFoundException {
+		System.out.print("password" + password);
+		System.out.print("email" + email);
 		Users users = usersRepository.findByEmailAndPassword(email, password);
+		System.out.print("dsasdasdasdasdasd" + users);
 		return ResponseEntity.ok().body(users);
 	}
 
@@ -74,8 +77,8 @@ public class UsersController {
 		// test enskripsi password
 
 		String password=users.getPassword(); 		
-		String encryptPwd = passwordEncoder.encode(password);
-		users.setPassword(encryptPwd);
+//		String encryptPwd = passwordEncoder.encode(password);
+		users.setPassword(password);
 		// SET ROLE 
 		users.setRole("customer");
 		return usersRepository.save(users);
