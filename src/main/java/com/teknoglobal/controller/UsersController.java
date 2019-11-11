@@ -83,6 +83,21 @@ public class UsersController {
 		users.setRole("customer");
 		return usersRepository.save(users);
 	}
+
+// 	@CrossOrigin
+// 	@PostMapping("/users/owner")
+// 	public Users createUsers(@Valid @RequestBody Users users) {
+
+
+// 		// test enskripsi password
+
+// 		String password=users.getPassword(); 		
+// //		String encryptPwd = passwordEncoder.encode(password);
+// 		users.setPassword(password);
+// 		// SET ROLE 
+// 		users.setRole(role);
+// 		return usersRepository.save(users);
+// 	}
 	
 	@CrossOrigin
 	@PutMapping("/users/{id}")

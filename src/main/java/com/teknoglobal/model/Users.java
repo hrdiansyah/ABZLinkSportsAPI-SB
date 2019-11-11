@@ -17,16 +17,22 @@ public class Users {
     private String email;
 	private String password;
 	private String role;
+	private String alamat;
+	private String telp;
+	private String jeniskelamin;
 	
 	public Users() {
 		
 	}
 	
-	public Users(String firstName, String lastName, String email, String password, String role) {
+	public Users(String firstName, String lastName, String email, String password, String alamat, String telp, String jeniskelamin, String role) {
 		this.firstName = firstName;
 		this.lastName = lastName;
         this.email = email;
 		this.password = password;
+		this.alamat = alamat;
+		this.telp = telp;
+		this.jeniskelamin = jeniskelamin;
 		this.role=role;
 	}
 	
@@ -70,7 +76,29 @@ public class Users {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-
+	@Column(name = "alamat", nullable = false)
+	public String getAlamat() {
+		return alamat;
+	}
+	public void setAlamat(String alamat) {
+		this.alamat = alamat;
+	}
+	
+	@Column(name = "telp", nullable = false)
+	public String getTelp() {
+		return telp;
+	}
+	public void setTelp(String telp) {
+		this.telp = telp;
+	}
+	
+	@Column(name = "jeniskelamin", nullable = false)
+	public String getJeniskelamin() {
+		return jeniskelamin;
+	}
+	public void setjeniskelamin(String jeniskelamin) {
+		this.jeniskelamin = jeniskelamin;
+	}
 	@Column(name = "role", nullable = false)
 	public String getRole() {
 		return role;
@@ -82,7 +110,7 @@ public class Users {
 	@Override
 	public String toString() {
 	return "Users [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", email=" + email
-				+ ", password=" + password + ",role="+role+"]";
+				+ ", password=" + password + ", alamat=" + alamat + ", telp=" + telp + ", jeniskelamin=" + jeniskelamin + ",role="+role+"]";
 	}
 	
 }
